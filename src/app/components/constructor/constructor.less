@@ -1,0 +1,176 @@
+@borderDefault: rgba(255, 255, 255, .2);
+@borderHovered: rgba(255, 255, 255, .8);
+@buttonColor: rgba(0, 53, 77, .8);
+@blue: rgb(0, 53, 77);
+@red: #ec0000;
+
+.textarea {
+  display: inline-block;
+  width: auto;
+  height: auto;
+  padding: 0;
+  background-color: transparent;
+  resize: none;
+  border: 1px dashed @borderDefault;
+  outline: none;
+  text-transform: uppercase;
+}
+
+.constructor {
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 56.2vw;
+  background-image: url("./temp.png");
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+
+  &__form {
+    font-size: 5vw;
+    text-transform: uppercase;
+
+    &__org-name {
+      display: inline-block;
+      position: relative;
+      padding-right: 1.56vw;
+      margin: 6.4vw 11.3vw;
+
+      &__field {
+        .textarea;
+        width: 39.7vw;
+        height: 8.79vw;
+        padding: .2vw 1vw;
+        font-size: 2.5vw;
+        line-height: 4.15vw;
+
+        &:hover,
+        &:active,
+        &:focus {
+          border: 1px dashed @borderHovered;
+        }
+      }
+
+      &__recording {
+        position: absolute;
+        top: .35vw;
+        right: 0;
+        width: 1.9vw;
+        height: 1.9vw;
+        padding: 0;
+        margin: 0;
+        background-color: @red;
+        border-radius: 50%;
+      }
+    }
+
+    &__name {
+      margin: 4.95vw 0 0 12.7vw;
+      font-size: 6.5vw;
+      line-height: 5.53vw;
+
+      &__field {
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+        width: auto;
+        max-width: 35vw;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        border-bottom: 1px dashed @borderDefault;
+        text-transform: uppercase;
+
+        &:hover,
+        &:active,
+        &:focus {
+          border-bottom: 1px dashed @borderHovered;
+        }
+      }
+    }
+
+    &__subtitle {
+      &__field {
+        .textarea;
+        min-width: 36.5vw;
+        max-width: 45.1vw;
+        max-height: 10vw;
+        font-size: 1.8vw;
+        font-family: Arial;
+        font-weight: bold;
+        margin: 1.11vw 13.1vw;
+        padding: .2vw .6vw;
+        line-height: 2.75vw;
+        background-color: @red;
+        resize: both;
+
+        &:hover,
+        &:active,
+        &:focus {
+          border: 1px dashed @borderHovered;
+        }
+      }
+    }
+
+    &__photo {
+      position: absolute;
+      top: 12vw;
+      right: 20.7vw;
+      width: 26vw;
+      height: 26vw;
+      background-color: @blue;
+      border: 3px dashed @borderDefault;
+      border-radius: 50%;
+      overflow: hidden;
+
+      &:hover,
+      &:active,
+      &:focus {
+        border: 3px dashed @borderHovered;
+      }
+
+      &__field {
+        display: block;
+        width: 100%;
+        height: 100%;
+        opacity: 0.01;
+        cursor: pointer;
+      }
+    }
+
+    &__actions {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      font-size: 0;
+      text-align: right;
+
+      button {
+        font-size: 2vw;
+        text-transform: uppercase;
+        color: @borderHovered;
+        padding: .5vw 2vw;
+        margin: 1vw;
+        margin-left: 0;
+        background: @buttonColor;
+        border: 1px solid @borderDefault;
+        border-radius: 3px;
+        outline: none;
+
+        &.disabled {
+          color: @borderDefault;
+          cursor: default;
+          pointer-events: none;
+        }
+
+        &:active,
+        &:hover {
+          color: #fff;
+          border-color: @borderHovered;
+        }
+      }
+    }
+  }
+}

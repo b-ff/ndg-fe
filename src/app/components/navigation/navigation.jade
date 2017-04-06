@@ -1,0 +1,7 @@
+- require('./navigation.less');
+
+nav.navigation.navbar.navbar-default
+    .container-fluid
+        ul.nav.navbar-nav
+            li(ng-repeat="state in ctrl.availableStates track by state.name")
+                a(ui-sref="{{ state.name }}") {{ state.title }}

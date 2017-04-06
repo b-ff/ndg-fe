@@ -1,0 +1,25 @@
+- require('./constructor.less');
+
+.constructor
+    form.constructor__form
+        .constructor__form__org-name(ng-model="ctrl.orgName")
+            textarea.constructor__form__org-name__field(ng-model="ctrl.orgName")
+            .constructor__form__org-name__recording
+
+        .constructor__form__name
+            span.constructor__form__name__prefix.constructor__form__name__prefix--str1
+                | {{ ::ctrl.text.namePrefix.str1 }}
+            br
+            span.constructor__form__name__prefix.constructor__form__name__prefix--str2
+                | {{ ::ctrl.text.namePrefix.str2 }}
+            input.constructor__form__name__field(type="text" ng-model="ctrl.name")
+
+        .constructor__form__subtitle
+            textarea.constructor__form__subtitle__field(ng-model="ctrl.subtitle")
+
+        .constructor__form__photo
+            input.constructor__form__photo__field(type="file")
+
+        .constructor__form__actions
+            button.constructor__form__actions__save(ng-click="ctrl.save()") {{ ::ctrl.text.saveButton }}
+            button.constructor__form__actions__reset(ng-click="ctrl.reset()") {{ ::ctrl.text.resetButton }}
